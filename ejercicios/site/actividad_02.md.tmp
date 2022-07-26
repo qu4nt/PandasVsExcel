@@ -32,20 +32,13 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "En Python, podemos sumar varios números utilizando `*`"
+!!! question "En Python, podemos sumar varios números utilizando el operador `*`"
     - Verdadero
     - Falso
 
 ??? success "Respuesta"
 
     - [x] Falso, en Python puedes sumar los números con el signo `+`.
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" markdown="1">
-<div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-
 </div>
 </div>
 </div>
@@ -90,7 +83,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Los siguientes corresponde a nombres de variables, ¿Cuáles son correctos?"
+!!! question "Los siguientes corresponden a nombres de variables, ¿cuáles son correctos?"
 
     - `precio`
     - `archivo3`
@@ -208,7 +201,7 @@ b. str
 
 c. bool
 
-d. No tiene ningún tipo porque produce un error.
+d. No es de ningún tipo porque se produce un error.
 </div>
 </div>
 </div>
@@ -265,8 +258,11 @@ d. No tiene ningún tipo porque produce un error.
     ```
 
     a. Escribiendo vertebrados['anfibios']
+
     b. Escribiendo 'anfibios'
+    
     c. Escribiendo vertebrados[2]
+    
     d. Ninguna de las anteriores
 </div>
 </div>
@@ -283,7 +279,7 @@ d. No tiene ningún tipo porque produce un error.
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Crea varias variables; una que almacene tu nombre, otra tu número favorito, tu edad, cantidad de hermanos y tu estatura en metros, luego verificar el tipo de datos"
+!!! question "Crea varias variables; una que almacene tu nombre, otra tu número favorito, tu edad, cantidad de hermanos y tu estatura en metros, luego verifica el tipo de datos de cada una"
 
 ??? success "Respuesta"
     Por ejemplo,
@@ -310,7 +306,6 @@ d. No tiene ningún tipo porque produce un error.
     float
 
     ```
-
 </div>
 </div>
 </div>

@@ -10,11 +10,14 @@ theme:
   logo: logo.png
   palette:
     primary: white
+    
 
 
 extra:
   search:
     language: 'es, es'
+  homepage: https://qu4nt.com/
+
 
 extra_javascript:
   - search/search_index.js
