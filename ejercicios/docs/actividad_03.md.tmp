@@ -1,0 +1,258 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
+
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    jupyterWidgetsScript.src = widgetRendererSrc;
+
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+# Funciones, módulos y bibliotecas
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Determina cuáles de las siguientes afirmaciones son verdaderas a cerca de las funciones en Excel y Python"
+
+    a. Las funciones en Excel las descargamos de paquetes externos.
+
+    b. En Python las funciones se pueden crear utilizando la palabra `function`.
+
+    c. Podemos crear funciones en Excel a partir de macros.
+    
+    d. En Python no tenemos funciones predefinidas.
+
+??? success "Respuesta"
+    La opción verdadera es:
+
+    - [x] c. Podemos crear funciones en Excel a partir de macros.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "¿Qué son las keyword en Python?"
+
+    a. Son claves que combinan las funcionalidades de bibliotecas.
+
+    b. Son contraseñas para descargar archivos Python.
+
+    c. Son palabras especiales dentro del lenguaje.
+
+    d. Son nombres de funciones en Python.
+    
+    e. Ninguna de las anteriores
+
+??? success "Respuesta"
+
+    - [x] c. Son palabras especiales dentro del lenguaje.
+
+    Las palabra reservadas o keywords son palabras especiales que tienen significados y propósitos determinados dentro del lenguaje. Estás palabras siempre están disponibles. Las palabras clave de Python son diferentes de las funciones y tipos incorporados de Python.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Una biblioteca en Python es un conjunto de funciones, módulos y paquetes"
+    
+    - Verdadero
+    - Falso
+
+??? success "Respuesta"
+
+    - [x] Verdadero.
+  
+    En Python una biblioteca o librería como se ha popularizado, es un conjunto de funcionalidades (módulos y paquetes) que puede ser utilizado en uno o varios programas de forma simultánea y responden a tareas específicas.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "¿Cómo se importan las bibliotecas/módulos en Python?"
+
+    ```py
+    a. import nombre_biblioteca
+    ```
+    
+    ```py
+    b. read nombre_biblioteca
+    ```
+
+    ```py
+    c. as nombre_biblioteca
+    ```
+
+    d. Ninguna de las anteriores.
+
+??? success "Respuesta"
+
+    - [x] `import nombre_biblioteca`.
+
+    Para importar bibliotecas, módulos y paquetes se utiliza la palabra `import` y el nombre de la biblioteca o paquete.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+# Datos de tipo Fecha
+
+!!! question "Para manejar las fechas y horas en Python debemos utilizar el módulo `datadate`"
+
+    - Verdadero
+    - Falso
+
+??? success
+     - [x] Falso.
+    El módulo de Python permite manejar fechas y horas es `datetime`, que forma parte de la biblioteca estándar.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "En una celda de código crea una variable que contenga tu fecha actual y luego crea otra con la fecha en la posición 3456 (`fromtimestamp`). Calcula la diferencia entre esas dos fechas."
+
+??? success "Respuesta"
+
+    ```py
+    import datetime
+
+    hoy = datetime.datetime.today()
+    fecha = datetime.datetime.fromtimestamp(3456)
+
+    hoy - fecha
+    ```
+    ```py
+    datetime.timedelta(days=19188, seconds=54731, microseconds=754007)
+    ```
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+<div class="output_area" markdown="1">
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>
+<code>datetime.timedelta(days=19188, seconds=54731, microseconds=754007)</code>
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+<div class="output_area" markdown="1">
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>
+<code>datetime.datetime(1969, 12, 31, 20, 57, 36)</code>
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+
+```
+
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+
+

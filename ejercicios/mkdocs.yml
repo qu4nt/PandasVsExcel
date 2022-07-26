@@ -1,0 +1,53 @@
+site_name: De Excel a pandas
+site_author: qu4nt
+copyright: Copyright &copy; 2022 qu4nt
+
+theme:
+  name: material
+  language: es
+  search_index_only: true
+  include_search_page: false
+  logo: logo.png
+  palette:
+    primary: white
+
+
+extra:
+  search:
+    language: 'es, es'
+
+extra_javascript:
+  - search/search_index.js
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+plugins:
+ - mknotebooks
+ 
+    
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - toc:
+      permalink: true
+
+plugins:
+  - mknotebooks:
+      write_markdown: true
+
+use_directory_urls: false
