@@ -1,0 +1,320 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
+
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    jupyterWidgetsScript.src = widgetRendererSrc;
+
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "En Python, podemos sumar varios números utilizando el operador `*`"
+    - Verdadero
+    - Falso
+
+??? success "Respuesta"
+
+    - [x] Falso, en Python puedes sumar los números con el signo `+`.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question " Para realizar operaciones matemáticas básicas en Python podemos utilizar `+`, `*`, `/`, `-`"
+
+    - Verdadero
+    - Falso
+
+??? success "Respuesta"
+
+    - [x] Verdadero. Los operadores matemáticos en Python son tal que 
+
+        |Operador|Descripción|
+        |--------|-----------|
+        |+|Suma|
+        |-|Resta|
+        |*|Multiplicación|
+        |/|División|
+        |//|División entera|
+        |**| Potencia|
+        |%|Residuo|
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Los siguientes corresponden a nombres de variables, ¿cuáles son correctos?"
+
+    - `precio`
+    - `archivo3`
+    - `01_ventas`
+    - `ventas_2022`
+    - `cantidad total`
+    - `CoStos`
+
+??? success "Respuesta"
+    - [x] `precio`
+    - [x] `archivo3`
+    - [x] `ventas_2022`
+    - [x] `CoStos`
+    
+    Las variables `precio`, `archivo3`, `ventas_2022` y `CoStos` son correctos. Recuerda que Python es case sentive (sensible a las mayúsculas) por ello, si queremos acceder a la variable CoStos escribiendo Costos, o costos no resultará factible.
+    
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "¿De qué tipo es la variable `precio = 200`?"
+
+    a. int
+
+    b. float
+
+    c. num
+
+    d. int float
+
+??? success "Respuesta"
+    
+    - [x] a. int
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Escribe en una celda de código lo siguiente y determina de qué tipo es `variable`"
+
+    ```py
+    var = 5
+    var2 = 20
+    variable = var/var2
+    variable =+ var
+    ```
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    `variable` es de tipo entero.
+
+    ```py
+    var = 5
+    var2 = 20
+    variable = var/var2
+    variable =+ var
+
+    type(variable)
+
+    int
+    ```
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Escribe en una celda de código lo siguiente y determina de qué tipo es `letras`"
+    
+    ```py
+    letra = "a"
+    num = 2
+    letras = 2 * letra
+    ```
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    ```py
+    type(letras)
+    str
+    ```
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Si escribimos lo siguiente en una celda y lo almacenamos en una variable, ¿de qué tipo será?"
+
+`'Tres' > '4' `
+
+a. int
+
+b. str
+
+c. bool
+
+d. No es de ningún tipo porque se produce un error.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuestas"
+    
+    c. bool
+    
+    ```py
+    var = 'Tres' > '4 '
+    type(var)
+
+    bool
+    ```
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "¿Cómo creamos las listas y las tuplas?"
+
+    a. Las listas las creamos con () y las tuplas con [].
+
+    b. Las listas las creamos con [] y las tuplas con ().
+
+    c. Ambas se pueden crear con ().
+
+    d. Ambas se pueden crear con [].
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    b. Las listas las creamos con [] y las tuplas con ().
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Lo siguiente representa un diccionario, ¿cómo accedemos a los valores en 'anfibios'?"
+
+    ```py
+     vertebrados = {'mamíferos':['vivíparos', 'leche', 'pelos', '4'],
+    'aves': ('ovíparos', 'no toman leche', 'plumas', '2'),
+    'anfibios':['ovíparos', 'piel desnuda y húmeda', '4'],
+    'peces':['ovíparos', 'escamas', '0']}
+    ```
+
+    a. Escribiendo vertebrados['anfibios']
+
+    b. Escribiendo 'anfibios'
+    
+    c. Escribiendo vertebrados[2]
+    
+    d. Ninguna de las anteriores
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    a. Escribiendo vertebrados['anfibios']
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Crea varias variables; una que almacene tu nombre, otra tu número favorito, tu edad, cantidad de hermanos y tu estatura en metros, luego verifica el tipo de datos de cada una"
+
+??? success "Respuesta"
+    Por ejemplo,
+    ```py
+    nombre = 'Anavelyz'
+    numero = 17
+    edad = 25
+    hermanos = 1
+    estatura = 1,63
+
+    type(nombre)
+    str
+
+    type(numero)
+    int
+
+    type(edad)
+    int
+
+    type(hermanos)
+    int
+
+    type(estatura)
+    float
+
+    ```
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+
+

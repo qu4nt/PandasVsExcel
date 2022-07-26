@@ -1,0 +1,113 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
+
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    jupyterWidgetsScript.src = widgetRendererSrc;
+
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "¿Qué es Python? Selecciona una opción"
+
+    a. Un lenguaje de programación
+
+    b. Un software especializado
+
+    c. Una cadena de negocios
+
+    d. Una comunidad de programadores
+??? success "Respuesta"
+
+    - [x] a. Un lenguaje de programación
+  
+    Python es un lenguaje de programación de alto nivel, que apareció en 1991, fue Diseñado por Guido van Rossum.
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "¿Para cuáles de las siguientes tareas podría ser mejor utilizar Python en vez de Excel?"
+
+    a. Un investigador debe transcribir sus datos.
+
+    b. Una analista de datos desea unir en un único archivo una serie de hojas de excel. Estos archivos están contenidos en una carpeta.
+
+    c. Crear una tabla para presentar resultados.
+
+    d. Editar datos con más de 2 millones de filas.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+    
+    - [x] b. Una analista de datos desea unir en un único archivo una serie de hojas de excel. Estos archivos están contenidos en una carpeta.
+    - [x] d. Editar datos con más de 2 millones de filas.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "¿Cuáles de las siguientes afirmaciones son verdaderas?"
+
+    a. Excel es una aplicación de paga.
+
+    b. Python solo está disponible para Windows.
+
+    c. Python permite crear aplicaciones.
+
+    d. Excel permite crear macros.
+
+    e. Excel es de código abierto.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    - [x] a. Excel es una aplicación de paga.
+
+    - [x] c. Python permite crear aplicaciones.
+    
+    - [x] d. Excel permite crear macros.
+
+    Excel es una aplicación de paga de la compañía Microsoft, este permite agregar o crear macros para ampliar sus funcionalidades.
+
+    Por otro lado, Python es un *lenguaje* de programación que permite crear aplicaciones, analizar datos, construir objetos y desarrollar cosas interesantes. Está disponible para Windows, iMac y Linux es decir, es multiplataforma.
+</div>
+</div>
+</div>
+
+

@@ -1,0 +1,660 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="qu4nt">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Actividad 02 - De Excel a pandas</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="https://qu4nt.com/" title="De Excel a pandas" class="md-header__button md-logo" aria-label="De Excel a pandas" data-md-component="logo">
+      
+  <img src="logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            De Excel a pandas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Actividad 02
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://qu4nt.com/" title="De Excel a pandas" class="md-nav__button md-logo" aria-label="De Excel a pandas" data-md-component="logo">
+      
+  <img src="logo.png" alt="logo">
+
+    </a>
+    De Excel a pandas
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="actividad_01.html" class="md-nav__link">
+        Actividad 01
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="actividad_02.html" class="md-nav__link md-nav__link--active">
+        Actividad 02
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="actividad_03.html" class="md-nav__link">
+        Actividad 03
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Actividad 02</h1>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
+
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    jupyterWidgetsScript.src = widgetRendererSrc;
+
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">En Python, podemos sumar varios números utilizando el operador <code>*</code></p>
+<ul>
+<li>Verdadero</li>
+<li>Falso</li>
+</ul>
+</div>
+<details class="success">
+<summary>Respuesta</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Falso, en Python puedes sumar los números con el signo <code>+</code>.</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title"> Para realizar operaciones matemáticas básicas en Python podemos utilizar <code>+</code>, <code>*</code>, <code>/</code>, <code>-</code></p>
+<ul>
+<li>Verdadero</li>
+<li>Falso</li>
+</ul>
+</div>
+<details class="success">
+<summary>Respuesta</summary>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Verdadero. Los operadores matemáticos en Python son tal que </p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Suma</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Resta</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplicación</td>
+</tr>
+<tr>
+<td>/</td>
+<td>División</td>
+</tr>
+<tr>
+<td>//</td>
+<td>División entera</td>
+</tr>
+<tr>
+<td>**</td>
+<td>Potencia</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Residuo</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"></div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"></div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">Los siguientes corresponden a nombres de variables, ¿cuáles son correctos?</p>
+<ul>
+<li><code>precio</code></li>
+<li><code>archivo3</code></li>
+<li><code>01_ventas</code></li>
+<li><code>ventas_2022</code></li>
+<li><code>cantidad total</code></li>
+<li><code>CoStos</code></li>
+</ul>
+</div>
+<details class="success">
+<summary>Respuesta</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>precio</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>archivo3</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>ventas_2022</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>CoStos</code></li>
+</ul>
+<p>Las variables <code>precio</code>, <code>archivo3</code>, <code>ventas_2022</code> y <code>CoStos</code> son correctos. Recuerda que Python es case sentive (sensible a las mayúsculas) por ello, si queremos acceder a la variable CoStos escribiendo Costos, o costos no resultará factible.</p>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"></div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">¿De qué tipo es la variable <code>precio = 200</code>?</p>
+<p>a. int</p>
+<p>b. float</p>
+<p>c. num</p>
+<p>d. int float</p>
+</div>
+<details class="success">
+<summary>Respuesta</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> a. int</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">Escribe en una celda de código lo siguiente y determina de qué tipo es <code>variable</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">var</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="n">var</span><span class="o">/</span><span class="n">var2</span>
+<span class="n">variable</span> <span class="o">=+</span> <span class="n">var</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<details class="success">
+<summary>Respuesta</summary>
+<p><code>variable</code> es de tipo entero.</p>
+<div class="highlight"><pre><span></span><code><span class="n">var</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="n">var</span><span class="o">/</span><span class="n">var2</span>
+<span class="n">variable</span> <span class="o">=+</span> <span class="n">var</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+
+<span class="nb">int</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">Escribe en una celda de código lo siguiente y determina de qué tipo es <code>letras</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">letra</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">letras</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">letra</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<details class="success">
+<summary>Respuesta</summary>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">letras</span><span class="p">)</span>
+<span class="nb">str</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">Si escribimos lo siguiente en una celda y lo almacenamos en una variable, ¿de qué tipo será?</p>
+</div>
+<p><code>'Tres' &gt; '4'</code></p>
+<p>a. int</p>
+<p>b. str</p>
+<p>c. bool</p>
+<p>d. No es de ningún tipo porque se produce un error.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<details class="success">
+<summary>Respuestas</summary>
+<p>c. bool</p>
+<div class="highlight"><pre><span></span><code><span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;Tres&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;4 &#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+
+<span class="nb">bool</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">¿Cómo creamos las listas y las tuplas?</p>
+<p>a. Las listas las creamos con () y las tuplas con [].</p>
+<p>b. Las listas las creamos con [] y las tuplas con ().</p>
+<p>c. Ambas se pueden crear con ().</p>
+<p>d. Ambas se pueden crear con [].</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<details class="success">
+<summary>Respuesta</summary>
+<p>b. Las listas las creamos con [] y las tuplas con ().</p>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">Lo siguiente representa un diccionario, ¿cómo accedemos a los valores en 'anfibios'?</p>
+<div class="highlight"><pre><span></span><code> <span class="n">vertebrados</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mamíferos&#39;</span><span class="p">:[</span><span class="s1">&#39;vivíparos&#39;</span><span class="p">,</span> <span class="s1">&#39;leche&#39;</span><span class="p">,</span> <span class="s1">&#39;pelos&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">],</span>
+<span class="s1">&#39;aves&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;ovíparos&#39;</span><span class="p">,</span> <span class="s1">&#39;no toman leche&#39;</span><span class="p">,</span> <span class="s1">&#39;plumas&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">),</span>
+<span class="s1">&#39;anfibios&#39;</span><span class="p">:[</span><span class="s1">&#39;ovíparos&#39;</span><span class="p">,</span> <span class="s1">&#39;piel desnuda y húmeda&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">],</span>
+<span class="s1">&#39;peces&#39;</span><span class="p">:[</span><span class="s1">&#39;ovíparos&#39;</span><span class="p">,</span> <span class="s1">&#39;escamas&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">]}</span>
+</code></pre></div>
+<p>a. Escribiendo vertebrados['anfibios']</p>
+<p>b. Escribiendo 'anfibios'</p>
+<p>c. Escribiendo vertebrados[2]</p>
+<p>d. Ninguna de las anteriores</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<details class="success">
+<summary>Respuesta</summary>
+<p>a. Escribiendo vertebrados['anfibios']</p>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="admonition question">
+<p class="admonition-title">Crea varias variables; una que almacene tu nombre, otra tu número favorito, tu edad, cantidad de hermanos y tu estatura en metros, luego verifica el tipo de datos de cada una</p>
+</div>
+<details class="success">
+<summary>Respuesta</summary>
+<p>Por ejemplo,
+<div class="highlight"><pre><span></span><code><span class="n">nombre</span> <span class="o">=</span> <span class="s1">&#39;Anavelyz&#39;</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">edad</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">hermanos</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">estatura</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">63</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+<span class="nb">str</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<span class="nb">int</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>
+<span class="nb">int</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">hermanos</span><span class="p">)</span>
+<span class="nb">int</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">estatura</span><span class="p">)</span>
+<span class="nb">float</span>
+</code></pre></div></p>
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"></div>
+</div>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="actividad_01.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Actividad 01" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Actividad 01
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="actividad_03.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Actividad 03" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Actividad 03
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 qu4nt
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="search/search_index.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
