@@ -1,4 +1,4 @@
-site_name:
+site_name: Actividades
 site_author: qu4nt
 copyright: Copyright &copy; 2022 qu4nt
 
@@ -10,7 +10,9 @@ theme:
   logo: logo.png
   palette:
     primary: white
-    
+  font:
+    text: Source Sans Pro
+
 
 
 extra:
