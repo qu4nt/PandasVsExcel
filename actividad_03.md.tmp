@@ -59,7 +59,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "¿Qué son las keyword en Python?"
+!!! question "¿Qué son las _keywords_ en Python?"
 
     a. Son claves que combinan las funcionalidades de bibliotecas.
 
@@ -166,79 +166,125 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" markdown="1">
-<div class="input">
-
-```python
-
-```
-
-</div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output" markdown="1">
-
-<div class="output_area" markdown="1">
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>
-<code>datetime.timedelta(days=19188, seconds=54731, microseconds=754007)</code>
-</pre>
-</div>
-
-</div>
-
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+# Comparación de funciones de Excel y funciones de Python
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered" markdown="1">
-<div class="input">
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Las funciones de Excel son imposibles de replicar en Python"
 
-```python
-
-```
-
-</div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output" markdown="1">
-
-<div class="output_area" markdown="1">
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>
-<code>datetime.datetime(1969, 12, 31, 20, 57, 36)</code>
-</pre>
-</div>
-
-</div>
-
+    - Verdadero
+    - Falso
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered" markdown="1">
-<div class="input">
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
 
-```python
-
-```
-
+    Falso. Las funciones de Excel se pueden replicar en Python, necesitamos conocer algunos módulos, bibliotecas o paquetes o simplemente crear nuestras propias funciones.
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered" markdown="1">
-<div class="input">
-
-```python
-
-```
-
 </div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Si queremos calcular la raíz cuadrada de algunos valores, ¿qué función debería utilizar si hemos importado el módulo `math`?"
 
+    - `sqrt`
+    - `root`
+    - `raiz`
+    - Ninguna de las anteriores
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+    `sqrt`: Devuelve la raíz cuadrada de x.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Supongamos que hemos ido a un supermercado y decidimos comprar los siguientes productos, almacena la siguiente información en"
+
+    1. Dos listas
+    1. Dos tuplas
+    1. Una lista de listas en la que cada producto y su precio sea una lista.
+    1. Un diccionario 
+   
+    <p align="center"><img src="Factura.png"><p>
+
+
+    Luego, determina cuál es el precio más alto, el precio mínimo, la cantidad de productos y la suma total de los precios de los productos. Esto a través de funciones de Python. 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+    1. 
+        ```py
+        productos = ['Arroz A', 'Arroz B', 'Pollo', 'Galletas', 'Champiñones']
+
+        precios = [2, 2.1, 8, 0.5, 10]
+        ```
+    1. 
+        ```py  
+        productos_tupla = ('Arroz A', 'Arroz B', 'Pollo', 'Galletas', 'Champiñones')
+
+        precios_tupla = (2, 2.1, 8, 0.5, 10)
+        ```
+    1. 
+        ```py
+        ll_productos = [['Arroz A', 2],
+            ['Arroz B', 2.1],
+            ['Pollo', 8],
+            ['Galletas', 0.5],
+            ['Champiñones', 10]]
+        ```
+    1. 
+        ```py
+        dic_productos = {'Arroz A': 2,
+            'Arroz B': 2.1,
+            'Pollo': 8,
+            'Galletas': 0.5,
+            'Champiñones': 10}
+           
+        dic_productos = {'productos': productos, 'precios': precios}
+        ```
+    
+    - El precio más alto es 10, lo podemos calcular a partir de 
+        ```py
+        max(precios)
+        ```
+    
+    - El precio mínimo es 0.5$, se puede calcular con
+        ```py
+        min(precios)
+        ```
+    - La cantidad total de productos 
+        ```py
+        len(precios)
+        ```
+    - La suma total de los precios es 22.6\$, se puede calcular mediante
+        ```py
+        sum(precios)
+        ```
+
+    !!! Note "Si lo haces de forma distinta puedes dejarnos un comentario para conocer tus grandiosas ideas"
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
