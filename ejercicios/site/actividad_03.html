@@ -504,90 +504,51 @@ El módulo de Python permite manejar fechas y horas es <code>datetime</code>, qu
 </code></pre></div>
 </li>
 <li>
-<div class="codehilite"><pre><span></span><code>```py  
+<div class="highlight"><pre><span></span><code><span class="n">productos_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Arroz A&#39;</span><span class="p">,</span> <span class="s1">&#39;Arroz B&#39;</span><span class="p">,</span> <span class="s1">&#39;Pollo&#39;</span><span class="p">,</span> <span class="s1">&#39;Galletas&#39;</span><span class="p">,</span> <span class="s1">&#39;Champiñones&#39;</span><span class="p">)</span>
 
-productos_tupla = (&#39;Arroz A&#39;, &#39;Arroz B&#39;, &#39;Pollo&#39;, &#39;Galletas&#39;, &#39;Champiñones&#39;)
-
-precios_tupla = (2, 2.1, 8, 0.5, 10)
-```
+<span class="n">precios_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="n">ll_productos</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Arroz A&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Arroz B&#39;</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Pollo&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Galletas&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Champiñones&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="n">dic_productos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Arroz A&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;Arroz B&#39;</span><span class="p">:</span> <span class="mf">2.1</span><span class="p">,</span>
+    <span class="s1">&#39;Pollo&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s1">&#39;Galletas&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;Champiñones&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
 
+<span class="n">dic_productos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;productos&#39;</span><span class="p">:</span> <span class="n">productos</span><span class="p">,</span> <span class="s1">&#39;precios&#39;</span><span class="p">:</span> <span class="n">precios</span><span class="p">}</span>
+</code></pre></div>
 </li>
 <li>
-<p><code>py
-    ll_productos = [['Arroz A', 2],
-                    ['Arroz B', 2.1],
-                    ['Pollo', 8],
-                    ['Galletas', 0.5],
-                    ['Champiñones', 10]]</code></p>
-</li>
-<li>
-<p>```py
-    dic_productos = {'Arroz A': 2,
-                    'Arroz B': 2.1,
-                    'Pollo': 8,
-                    'Galletas': 0.5,
-                    'Champiñones': 10}</p>
-<p>dic_productos = {'productos': productos,
-                 'precios': precios}
-```</p>
-</li>
-</ol>
 <p>El precio más alto es 10, lo podemos calcular a partir de 
     <div class="highlight"><pre><span></span><code><span class="nb">max</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
 </code></pre></div></p>
-<p>El precio mínimo es 0.5<span class="arithmatex"><span class="MathJax_Preview">, se puede calcular con
+</li>
+<li>
+<p>El precio mínimo es 0.5$, se puede calcular con
     <div class="highlight"><pre><span></span><code><span class="nb">min</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
-</code></pre></div>
-La cantidad total de productos 
-    <div class="highlight"><pre><span></span><code><span class="nb">len</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
-</code></pre></div>
-La suma total de los precios es 22.6</span><script type="math/tex">, se puede calcular con
-    <div class="highlight"><pre><span></span><code><span class="nb">min</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
-</code></pre></div>
-La cantidad total de productos 
-    <div class="highlight"><pre><span></span><code><span class="nb">len</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
-</code></pre></div>
-La suma total de los precios es 22.6</script></span>, se puede calcular mediante
-    <div class="highlight"><pre><span></span><code><span class="nb">sum</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
 </code></pre></div></p>
+</li>
+<li>La cantidad total de productos 
+    <div class="highlight"><pre><span></span><code><span class="nb">len</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+</code></pre></div></li>
+<li>La suma total de los precios es 22.6$, se puede calcular mediante
+    <div class="highlight"><pre><span></span><code><span class="nb">sum</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+</code></pre></div></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Si lo haces de forma distinta puedes dejarnos un comentario para conocer tus grandiosas ideas</p>
+</div>
 </details>
 </div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="highlight"><pre><span></span><code><span class="n">precios</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</code></pre></div>
-
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="highlight"><pre><span></span><code><span class="nb">sum</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
-</code></pre></div>
-
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="output_text output_subarea output_execute_result">
-<pre>
-<code>22.6</code>
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
