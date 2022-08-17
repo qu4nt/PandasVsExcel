@@ -1,0 +1,393 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
+
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    jupyterWidgetsScript.src = widgetRendererSrc;
+
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "¿Qué son las estructuras de datos? Selecciona la opción correcta."
+
+    a. Variables que no permiten acceder a los datos.
+
+    b. Conjuntos de datos almacenados en un objeto.
+
+    c. Datos desordenados
+
+    d. Conjuntos de datos que permiten un único tipo de datos.
+
+??? success "Respuesta"
+
+    b. Conjuntos de datos almacenados en un objeto.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Sobre los arrays (arreglos). Escoge la(s) opción(es) correcta(s)."
+
+    1. Son estructuras de datos.
+    2. Pueden ser numéricos o no.
+    3. Los valores deben ser del mismo tipo.
+    4. Puedes crear arrays con el módulo array o con Numpy.
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    Las opciones correctas sobre los arrays son:
+    1. Son estructuras de datos
+    3. Los valores deben ser del mismo tipo (especialmente para arrays creados con el módulo array)
+    4. Puedes crear arrays con el módulo array o con Numpy.
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Almacena la siguiente información en una variable, con el nombre que desees. Una vez hecho lo anterior, accede a los elementos desde la segunda posición, luego guárdalos en una variable y conviértelo en un array"
+
+    ```py
+        [['name', 'age', 'sex'],
+        ['Kylie', 25, 'F'],
+        ['Kanye', 45, 'M'],
+        ['Roger', 41, 'M'],
+        ['Cristiano', 37,'M'],
+        ['Lionel', 35, 'M']]
+    ```
+    **¿De qué tipo es la variable que almacenaste al inicio?**
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    En este caso se almacena la lista en una variable cuyo nombre es tarea.
+
+    ```py
+    tarea = [['name', 'age', 'sex'],
+        ['Kylie', 25, 'F'],
+        ['Kanye', 45, 'M'],
+        ['Roger', 41, 'M'],
+        ['Cristiano', 37,'M'],
+        ['Lionel', 35, 'M']]
+    ```
+    Para obtener los elementos desde la segunda posición debemos tener en cuenta que Python comienza enumerando las posiciones desde el 0, entonces en este caso obtenerlos debemos acceder desde el valor en la posición número 1.
+
+    ```py
+    tarea[1:]
+    ```
+    ```py
+    [['Kylie', 25, 'F'],
+    ['Kanye', 45, 'M'],
+    ['Roger', 41, 'M'],
+    ['Cristiano', 37,'M'],
+    ['Lionel', 35, 'M']]
+
+    ```
+
+    Ahora, para almacenar esto en una variable cuyo tipo sea array debemos utilizar la biblioteca Numpy.
+
+    ```py
+    import numpy as np
+
+    arr = np.array(tarea[1:])
+    arr
+    ``` 
+    
+    `array(['Cristiano', '37', 'M'], dtype='<U9')`
+    
+
+    - La variable almacenada al inicio es de tipo list (una lista). Recuerda que puedes comprobar el tipo utilizando la función `type`.
+        ```py
+        type(tarea)
+        ```
+        `list`
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Utilizando la variable (de tipo `list`) y el _array_ que almacenaste en el apartado anterior crea un DataFrame de _pandas_."
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    Debemos importar la biblioteca pandas
+
+    ```py
+
+    import pandas as pd
+
+    df = pd.DataFrame(tarea[1:], columns=tarea[0] )
+    df
+    ```
+
+    El resultado es 
+
+    | |name|age|sex|
+    |:----|:----|:----|:----|
+    |0|Kylie|25|F|
+    |1|Kanye|45|M|
+    |2|Roger|41|M|
+    |3|Cristiano|37|M|
+    |4|Lionel|35|M|
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Para el DataFrame que creaste anteriormente, selecciona la columna 'age', almacena esto en una variable y luego aplica la función dtype. ¿De qué tipo es la variable que almacenaste?"
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
+
+    Puedes seleccionar la columna a partir de distintas formas
+    
+    1. ```py
+        columna = df.age
+       ```
+    2. ```py
+        columna = df['age']
+       ```
+    3. ```py
+       columna = df.loc[:,'age']
+       ```
+    4. ```py
+       columna = df.iloc[:, 1]
+       ```
+   
+    ¿Cuál forma escogiste? _Déjanos tu respuesta en los comentarios._
+
+    Ahora, el tipo de variable es una serie de pandas, nos aseguramos de ello a partir de la función type.
+
+    ```py
+    type(columna)
+    ```
+    `pandas.core.series.Series`
+
+    !!! tip "Recuerda que las columnas de un DataFrame de pandas son Series"
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? question "Para el siguiente DataFrame, que almacena 10 valores de una [lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla](https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita), aplica las funciones suma, máximo y mínimo."
+
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+import pandas as pd
+from tabulate import tabulate
+```
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+df = pd.read_excel('/home/anavelyz/leche.xls')
+print(tabulate(df))
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+File <span class="ansi-green-fg">~/miniconda3/envs/analytics/lib/python3.9/site-packages/pandas/compat/_optional.py:138</span>, in <span class="ansi-cyan-fg">import_optional_dependency</span><span class="ansi-blue-fg">(name, extra, errors, min_version)</span>
+<span class="ansi-green-intense-fg ansi-bold">    137</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">--&gt; 138</span>     module <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">importlib</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">import_module</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    139</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ImportError</span>:
+
+File <span class="ansi-green-fg">~/miniconda3/envs/analytics/lib/python3.9/importlib/__init__.py:127</span>, in <span class="ansi-cyan-fg">import_module</span><span class="ansi-blue-fg">(name, package)</span>
+<span class="ansi-green-intense-fg ansi-bold">    126</span>         level <span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">1</span>
+<span class="ansi-green-fg">--&gt; 127</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_bootstrap</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_gcd_import</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">level</span><span class="ansi-yellow-bg">:</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">package</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">level</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">&lt;frozen importlib._bootstrap&gt;:1030</span>, in <span class="ansi-cyan-fg">_gcd_import</span><span class="ansi-blue-fg">(name, package, level)</span>
+
+File <span class="ansi-green-fg">&lt;frozen importlib._bootstrap&gt;:1007</span>, in <span class="ansi-cyan-fg">_find_and_load</span><span class="ansi-blue-fg">(name, import_)</span>
+
+File <span class="ansi-green-fg">&lt;frozen importlib._bootstrap&gt;:984</span>, in <span class="ansi-cyan-fg">_find_and_load_unlocked</span><span class="ansi-blue-fg">(name, import_)</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;xlrd&#39;
+
+During handling of the above exception, another exception occurred:
+
+<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> df <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">read_excel</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">/home/anavelyz/leche.xls</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(tabulate(df))
+
+File <span class="ansi-green-fg">~/miniconda3/envs/analytics/lib/python3.9/site-packages/pandas/util/_decorators.py:311</span>, in <span class="ansi-cyan-fg">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    305</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">len</span>(args) <span style="color: rgb(98,98,98)">&gt;</span> num_allow_args:
+<span class="ansi-green-intense-fg ansi-bold">    306</span>     warnings<span style="color: rgb(98,98,98)">.</span>warn(
+<span class="ansi-green-intense-fg ansi-bold">    307</span>         msg<span style="color: rgb(98,98,98)">.</span>format(arguments<span style="color: rgb(98,98,98)">=</span>arguments),
+<span class="ansi-green-intense-fg ansi-bold">    308</span>         <span class="ansi-bold" style="color: rgb(215,95,95)">FutureWarning</span>,
+<span class="ansi-green-intense-fg ansi-bold">    309</span>         stacklevel<span style="color: rgb(98,98,98)">=</span>stacklevel,
+<span class="ansi-green-intense-fg ansi-bold">    310</span>     )
+<span class="ansi-green-fg">--&gt; 311</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">func</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/analytics/lib/python3.9/site-packages/pandas/io/excel/_base.py:457</span>, in <span class="ansi-cyan-fg">read_excel</span><span class="ansi-blue-fg">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, decimal, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="ansi-green-intense-fg ansi-bold">    455</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">isinstance</span>(io, ExcelFile):
+<span class="ansi-green-intense-fg ansi-bold">    456</span>     should_close <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>
+<span class="ansi-green-fg">--&gt; 457</span>     io <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ExcelFile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">io</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">storage_options</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">storage_options</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    458</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> engine <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> engine <span style="color: rgb(98,98,98)">!=</span> io<span style="color: rgb(98,98,98)">.</span>engine:
+<span class="ansi-green-intense-fg ansi-bold">    459</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>(
+<span class="ansi-green-intense-fg ansi-bold">    460</span>         <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Engine should not be specified when passing </span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    461</span>         <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">an ExcelFile - ExcelFile already has the engine set</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    462</span>     )
+
+File <span class="ansi-green-fg">~/miniconda3/envs/analytics/lib/python3.9/site-packages/pandas/io/excel/_base.py:1419</span>, in <span class="ansi-cyan-fg">ExcelFile.__init__</span><span class="ansi-blue-fg">(self, path_or_buffer, engine, storage_options)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1416</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>engine <span style="color: rgb(98,98,98)">=</span> engine
+<span class="ansi-green-intense-fg ansi-bold">   1417</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>storage_options <span style="color: rgb(98,98,98)">=</span> storage_options
+<span class="ansi-green-fg">-&gt; 1419</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_reader <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_engines</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_io</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">storage_options</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">storage_options</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/analytics/lib/python3.9/site-packages/pandas/io/excel/_xlrd.py:24</span>, in <span class="ansi-cyan-fg">XlrdReader.__init__</span><span class="ansi-blue-fg">(self, filepath_or_buffer, storage_options)</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> <span style="color: rgb(175,0,0)">Reader using xlrd engine.</span>
+<span class="ansi-green-intense-fg ansi-bold">     15</span> 
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">     21</span> <span style="color: rgb(175,0,0)">    passed to fsspec for appropriate URLs (see ``_get_filepath_or_buffer``)</span>
+<span class="ansi-green-intense-fg ansi-bold">     22</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">     23</span> err_msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Install xlrd &gt;= 1.0.0 for Excel support</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">---&gt; 24</span> <span class="ansi-yellow-bg">import_optional_dependency</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">xlrd</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">extra</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">err_msg</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     25</span> <span style="color: rgb(0,135,0)">super</span>()<span style="color: rgb(98,98,98)">.</span><span style="color: rgb(0,0,255)">__init__</span>(filepath_or_buffer, storage_options<span style="color: rgb(98,98,98)">=</span>storage_options)
+
+File <span class="ansi-green-fg">~/miniconda3/envs/analytics/lib/python3.9/site-packages/pandas/compat/_optional.py:141</span>, in <span class="ansi-cyan-fg">import_optional_dependency</span><span class="ansi-blue-fg">(name, extra, errors, min_version)</span>
+<span class="ansi-green-intense-fg ansi-bold">    139</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ImportError</span>:
+<span class="ansi-green-intense-fg ansi-bold">    140</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> errors <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raise</span><span style="color: rgb(175,0,0)">&#34;</span>:
+<span class="ansi-green-fg">--&gt; 141</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ImportError</span>(msg)
+<span class="ansi-green-intense-fg ansi-bold">    142</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-intense-fg ansi-bold">    143</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+
+<span class="ansi-red-fg">ImportError</span>: Missing optional dependency &#39;xlrd&#39;. Install xlrd &gt;= 1.0.0 for Excel support Use pip or conda to install xlrd.</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+conda install -c anaconda xlrd
+```
+
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: | ^C
+- 
+Note: you may need to restart the kernel to use updated packages.
+</code>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
+
