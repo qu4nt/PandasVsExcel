@@ -32,11 +32,14 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "¿Qué son las estructuras de datos? Selecciona la opción correcta"
+!!! question "¿Qué son las estructuras de datos? Selecciona la opción correcta."
 
-    a. Son variables que no permiten acceder a los datos.
+    a. Variables que no permiten acceder a los datos.
+
     b. Conjuntos de datos almacenados en un objeto.
+
     c. Datos desordenados
+
     d. Conjuntos de datos que permiten un único tipo de datos.
 
 ??? success "Respuesta"
@@ -48,7 +51,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Sobre los arrays (arreglos). Escoge la(s) opción(es) correcta(s)"
+!!! question "Sobre los arrays (arreglos). Escoge la(s) opción(es) correcta(s)."
 
     1. Son estructuras de datos.
     2. Pueden ser numéricos o no.
@@ -106,7 +109,8 @@
 
     ```py
     tarea[1:]
-
+    ```
+    ```py
     [['Kylie', 25, 'F'],
     ['Kanye', 45, 'M'],
     ['Roger', 41, 'M'],
@@ -122,11 +126,16 @@
 
     arr = np.array(tarea[1:])
     arr
+    ``` 
+    
+    `array(['Cristiano', '37', 'M'], dtype='<U9')`
+    
 
-    array(['Cristiano', '37', 'M'], dtype='<U9')
-    ```
-
-    - La variable almacenada al inicio es de tipo list (una lista).
+    - La variable almacenada al inicio es de tipo list (una lista). Recuerda que puedes comprobar el tipo utilizando la función `type`.
+        ```py
+        type(tarea)
+        ```
+        `list`
 </div>
 </div>
 </div>
@@ -148,8 +157,8 @@
 
     import pandas as pd
 
-    data = pd.DataFrame(tarea[1:], columns=tarea[0] )
-    data
+    df = pd.DataFrame(tarea[1:], columns=tarea[0] )
+    df
     ```
 
     El resultado es 
@@ -161,24 +170,75 @@
     |2|Roger|41|M|
     |3|Cristiano|37|M|
     |4|Lionel|35|M|
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! question "Para el DataFrame que creaste anteriormente, selecciona la columna 'age', almacena esto en una variable y luego aplica la función dtype. ¿De qué tipo es la variable que almacenaste?"
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
 
+    Puedes seleccionar la columna a partir de distintas formas
+    
+    1. ```py
+        columna = df.age
+       ```
+    2. ```py
+        columna = df['age']
+       ```
+    3. ```py
+       columna = df.loc[:,'age']
+       ```
+    4. ```py
+       columna = df.iloc[:, 1]
+       ```
+   
+    ¿Cuál forma escogiste? _Déjanos tu respuesta en los comentarios._
+
+    Ahora, el tipo de variable es una serie de pandas, nos aseguramos de ello a partir de la función type.
+
+    ```py
+    type(columna)
     ```
+    `pandas.core.series.Series`
+
+    !!! tip "Recuerda que las columnas de un DataFrame de pandas son Series"
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Para el DataFrame que creaste anteriormente, selecciona la columna 'age' y aplica la función dtype. ¿De qué tipo es?"
+??? question "Para el siguiente DataFrame, que almacena 10 valores de una [lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla](https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita), aplica las funciones suma, máximo y mínimo."
+
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-??? success ""
+
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+import pandas as pd
+from tabulate import tabulate
+```
+
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
@@ -201,12 +261,9 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" markdown="1">
-<div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
 
-</div>
-</div>
-</div>
 
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
 

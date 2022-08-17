@@ -216,9 +216,29 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? question "Para el siguiente DataFrame, que almacena 10 valores de una [lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla](https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita), aplica las funciones suma, máximo y mínimo."
+
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+import pandas as pd
+from tabulate import tabulate
+```
+
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
@@ -234,5 +254,16 @@
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
 
+</div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
 
