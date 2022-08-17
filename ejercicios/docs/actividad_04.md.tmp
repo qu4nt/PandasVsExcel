@@ -216,48 +216,136 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-??? question "Para el siguiente DataFrame, que almacena 10 valores de una [lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla](https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita), aplica las funciones suma, máximo y mínimo."
+!!! question "Para el siguiente DataFrame, que almacena 10 valores de la [lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla](https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita), aplica las funciones suma, máximo y mínimo, de forma que obtengas:"
 
+    1. La cantidad total de leche por año.
+    2. La cantidad total de leche consumida para cada país.
+    3. La cantidad máxima de leche y la mínima por año
+    4. La cantidad máxima y mínima de leche por país. 
 
+    ```py
+    df = pd.DataFrame(
+        data=[
+            [430.76, 361.19],
+            [349.21, 305.87],
+            [341.47, 320.15],
+            [341.23, 355.86],
+            [318.69, 315.78],
+            [303.72, 277.52],
+            [295.46, 273.87],
+            [291.86, 247.17],
+            [288.12, 262.61],
+            [284.85, 238.86],
+        ],
+        columns=[
+            "Milk consumption 2013 (kg/capita/yr)",
+            "Milk consumption 2007 (kg/capita/yr)",
+        ],
+        index=[
+            " Finland ",
+            " Montenegro ",
+            " Netherlands ",
+            " Sweden ",
+            "  Switzerland ",
+            " Albania ",
+            " Lithuania ",
+            " Ireland ",
+            " Kazakhstan ",
+            " Estonia ",
+        ],
+    )
+    ```
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+??? success "Respuesta"
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered" markdown="1">
-<div class="input">
-
-```python
-import pandas as pd
-from tabulate import tabulate
-```
-
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered" markdown="1">
-<div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" markdown="1">
-<div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" markdown="1">
-<div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-
+    1. La cantidad total de leche por año se puede calcular a partir de 
+        ```py
+        df.sum()
+        ```
+        Obtendrás:
+        ```
+        Milk consumption 2013 (kg/capita/yr)    3245.37
+        Milk consumption 2007 (kg/capita/yr)    2958.88
+        dtype: float64
+        ```
+    1. La cantidad total de leche consumida para cada país.
+    
+    ```py
+    df.sum(axis=1)
+    ```
+    
+    ```
+      Finland          791.95
+      Montenegro       655.08
+      Netherlands      661.62
+      Sweden           697.09
+      Switzerland     634.47
+      Albania          581.24
+      Lithuania        569.33
+      Ireland          539.03
+      Kazakhstan       550.73
+      Estonia          523.71
+     dtype: float64
+    ```
+    1. La cantidad máxima de leche y la mínima por año
+    
+    ```py
+    df.max()
+    ```
+    ```
+    Milk consumption 2013 (kg/capita/yr)    430.76
+    Milk consumption 2007 (kg/capita/yr)    361.19
+    dtype: float64
+    ```
+   
+    ```py
+    df.min()
+    ```
+    ```
+    Milk consumption 2013 (kg/capita/yr)    284.85
+    Milk consumption 2007 (kg/capita/yr)    238.86
+    dtype: float64
+    ```
+    1. La cantidad máxima y mínima de leche por país
+    
+    ```py
+    df.max(axis=1)
+    ```
+    ```
+     Finland          430.76
+     Montenegro       349.21
+     Netherlands      341.47
+     Sweden           355.86
+     Switzerland     318.69
+     Albania          303.72
+     Lithuania        295.46
+     Ireland          291.86
+     Kazakhstan       288.12
+     Estonia          284.85
+    dtype: float64
+    ```
+    
+    ```py
+    df.min(axis=1)
+    ```
+    ```
+     Finland          361.19
+     Montenegro       305.87
+     Netherlands      320.15
+     Sweden           341.23
+     Switzerland      315.78
+     Albania          277.52
+     Lithuania        273.87
+     Ireland          247.17
+     Kazakhstan       262.61
+     Estonia          238.86
+    dtype: float64
+    ```
 </div>
 </div>
 </div>

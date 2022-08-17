@@ -542,39 +542,122 @@ Para obtener los elementos desde la segunda posición debemos tener en cuenta qu
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<details class="question">
-<summary>Para el siguiente DataFrame, que almacena 10 valores de una <a href="https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita">lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla</a>, aplica las funciones suma, máximo y mínimo.</summary>
-</details>
+<div class="admonition question">
+<p class="admonition-title">Para el siguiente DataFrame, que almacena 10 valores de la <a href="https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita">lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla</a>, aplica las funciones suma, máximo y mínimo, de forma que obtengas:</p>
+<ol>
+<li>La cantidad total de leche por año.</li>
+<li>La cantidad total de leche consumida para cada país.</li>
+<li>La cantidad máxima de leche y la mínima por año</li>
+<li>La cantidad máxima y mínima de leche por país. </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span><span class="mf">430.76</span><span class="p">,</span> <span class="mf">361.19</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">349.21</span><span class="p">,</span> <span class="mf">305.87</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">341.47</span><span class="p">,</span> <span class="mf">320.15</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">341.23</span><span class="p">,</span> <span class="mf">355.86</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">318.69</span><span class="p">,</span> <span class="mf">315.78</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">303.72</span><span class="p">,</span> <span class="mf">277.52</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">295.46</span><span class="p">,</span> <span class="mf">273.87</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">291.86</span><span class="p">,</span> <span class="mf">247.17</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">288.12</span><span class="p">,</span> <span class="mf">262.61</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">284.85</span><span class="p">,</span> <span class="mf">238.86</span><span class="p">],</span>
+    <span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Milk consumption 2013 (kg/capita/yr)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Milk consumption 2007 (kg/capita/yr)&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot; Finland &quot;</span><span class="p">,</span>
+        <span class="s2">&quot; Montenegro &quot;</span><span class="p">,</span>
+        <span class="s2">&quot; Netherlands &quot;</span><span class="p">,</span>
+        <span class="s2">&quot; Sweden &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;  Switzerland &quot;</span><span class="p">,</span>
+        <span class="s2">&quot; Albania &quot;</span><span class="p">,</span>
+        <span class="s2">&quot; Lithuania &quot;</span><span class="p">,</span>
+        <span class="s2">&quot; Ireland &quot;</span><span class="p">,</span>
+        <span class="s2">&quot; Kazakhstan &quot;</span><span class="p">,</span>
+        <span class="s2">&quot; Estonia &quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"></div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<details class="success">
+<summary>Respuesta</summary>
+<ol>
+<li>La cantidad total de leche por año se puede calcular a partir de 
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</code></pre></div>
+Obtendrás:
+<code>Milk consumption 2013 (kg/capita/yr)    3245.37
+Milk consumption 2007 (kg/capita/yr)    2958.88
+dtype: float64</code></li>
+<li>La cantidad total de leche consumida para cada país.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p><code>Finland          791.95
+  Montenegro       655.08
+  Netherlands      661.62
+  Sweden           697.09
+  Switzerland     634.47
+  Albania          581.24
+  Lithuania        569.33
+  Ireland          539.03
+  Kazakhstan       550.73
+  Estonia          523.71
+ dtype: float64</code>
+3. La cantidad máxima de leche y la mínima por año</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</code></pre></div>
+<code>Milk consumption 2013 (kg/capita/yr)    430.76
+Milk consumption 2007 (kg/capita/yr)    361.19
+dtype: float64</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</code></pre></div>
+<code>Milk consumption 2013 (kg/capita/yr)    284.85
+Milk consumption 2007 (kg/capita/yr)    238.86
+dtype: float64</code>
+4. La cantidad máxima y mínima de leche por país</p>
+<div class="codehilite"><pre><span></span><code>```py
 </code></pre></div>
 
+<p>df.max(axis=1)
+<code>`
+ Finland          430.76
+ Montenegro       349.21
+ Netherlands      341.47
+ Sweden           355.86
+ Switzerland     318.69
+ Albania          303.72
+ Lithuania        295.46
+ Ireland          291.86
+ Kazakhstan       288.12
+ Estonia          284.85
+dtype: float64
+`</code>py
+df.min(axis=1)
+<code>``</code>
+ Finland          361.19
+ Montenegro       305.87
+ Netherlands      320.15
+ Sweden           341.23
+  Switzerland     315.78
+ Albania          277.52
+ Lithuania        273.87
+ Ireland          247.17
+ Kazakhstan       262.61
+ Estonia          238.86
+dtype: float64
+`</p>
+</details>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"></div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"></div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"></div>
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
