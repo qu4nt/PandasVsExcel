@@ -271,6 +271,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="answer5.html" class="md-nav__link">
+        Answer5
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="answer_06.html" class="md-nav__link">
+        Answer 06
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -383,7 +413,7 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="admonition question">
-<p class="admonition-title">Almacena la siguiente información en una variable, con el nombre que desees. Una vez hecho lo anterior, accede a los elementos desde la segunda posición, luego guárdalos en una variable y conviértelo en un array</p>
+<p class="admonition-title">Almacena la siguiente información en una variable que puede tener cualquier nombre. Una vez hecho esto, accede a los elementos desde la segunda posición. Luego guárdalos en una variable y conviértelos en un array.</p>
 <p><div class="highlight"><pre><span></span><code>    <span class="p">[[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;Kylie&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;Kanye&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">],</span>
@@ -439,7 +469,7 @@ Para obtener los elementos desde la segunda posición debemos tener en cuenta qu
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="admonition question">
-<p class="admonition-title">Utilizando la variable (de tipo <code>list</code>) y el <em>array</em> que almacenaste en el apartado anterior crea un DataFrame de <em>pandas</em>.</p>
+<p class="admonition-title">Utilizando la variable (de tipo <code>list</code>) y el <strong><em>array</em></strong> que almacenaste en la parte anterior crea un DataFrame de <em>pandas</em>.</p>
 </div>
 </div>
 </div>
@@ -518,14 +548,22 @@ Para obtener los elementos desde la segunda posición debemos tener en cuenta qu
 <summary>Respuesta</summary>
 <p>Puedes seleccionar la columna a partir de distintas formas</p>
 <ol>
-<li><code>py
-    columna = df.age</code></li>
-<li><code>py
-    columna = df['age']</code></li>
-<li><code>py
-   columna = df.loc[:,'age']</code></li>
-<li><code>py
-   columna = df.iloc[:, 1]</code></li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="n">columna</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">age</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="n">columna</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="n">columna</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="n">columna</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+</li>
 </ol>
 <p>¿Cuál forma escogiste? <em>Déjanos tu respuesta en los comentarios.</em></p>
 <p>Ahora, el tipo de variable es una serie de pandas, nos aseguramos de ello a partir de la función type.</p>
@@ -543,7 +581,7 @@ Para obtener los elementos desde la segunda posición debemos tener en cuenta qu
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="admonition question">
-<p class="admonition-title">Para el siguiente DataFrame, que almacena 10 valores de la <a href="https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita">lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla</a>, aplica las funciones suma, máximo y mínimo, de forma que obtengas:</p>
+<p class="admonition-title">Para el siguiente DataFrame, que almacena 10 valores de la <a href="https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita">lista de países ordenados por el consumo anual de leche per cápita</a>, aplica las funciones suma, máximo y mínimo, de forma que obtengas:</p>
 <ol>
 <li>La cantidad total de leche por año.</li>
 <li>La cantidad total de leche consumida para cada país.</li>
@@ -592,70 +630,98 @@ Para obtener los elementos desde la segunda posición debemos tener en cuenta qu
 <summary>Respuesta</summary>
 <ol>
 <li>La cantidad total de leche por año se puede calcular a partir de 
-<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </code></pre></div>
-Obtendrás:
-<code>Milk consumption 2013 (kg/capita/yr)    3245.37
+    Obtendrás:
+    <div class="highlight"><pre><span></span><code>Milk consumption 2013 (kg/capita/yr)    3245.37
 Milk consumption 2007 (kg/capita/yr)    2958.88
-dtype: float64</code></li>
-<li>La cantidad total de leche consumida para cada país.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+dtype: float64
+</code></pre></div></li>
+<li>
+<p>La cantidad total de leche consumida para cada país.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<p><code>Finland          791.95
-  Montenegro       655.08
-  Netherlands      661.62
-  Sweden           697.09
-  Switzerland     634.47
-  Albania          581.24
-  Lithuania        569.33
-  Ireland          539.03
-  Kazakhstan       550.73
-  Estonia          523.71
- dtype: float64</code>
-3. La cantidad máxima de leche y la mínima por año</p>
+La salida es:
+<div class="highlight"><pre><span></span><code>Finland          791.95
+Montenegro       655.08
+Netherlands      661.62
+Sweden           697.09
+Switzerland     634.47
+Albania          581.24
+Lithuania        569.33
+Ireland          539.03
+Kazakhstan       550.73
+Estonia          523.71
+dtype: float64
+</code></pre></div></p>
+</li>
+<li>
+<ul>
+<li>
+<p>La cantidad máxima de leche por año</p>
 <p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </code></pre></div>
-<code>Milk consumption 2013 (kg/capita/yr)    430.76
+Obtendrás:
+<div class="highlight"><pre><span></span><code>Milk consumption 2013 (kg/capita/yr)    430.76
 Milk consumption 2007 (kg/capita/yr)    361.19
-dtype: float64</code></p>
-<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-</code></pre></div>
-<code>Milk consumption 2013 (kg/capita/yr)    284.85
-Milk consumption 2007 (kg/capita/yr)    238.86
-dtype: float64</code>
-4. La cantidad máxima y mínima de leche por país</p>
-<div class="codehilite"><pre><span></span><code>```py
-</code></pre></div>
-
-<p>df.max(axis=1)
-<code>`
- Finland          430.76
- Montenegro       349.21
- Netherlands      341.47
- Sweden           355.86
- Switzerland     318.69
- Albania          303.72
- Lithuania        295.46
- Ireland          291.86
- Kazakhstan       288.12
- Estonia          284.85
 dtype: float64
-`</code>py
-df.min(axis=1)
-<code>``</code>
- Finland          361.19
- Montenegro       305.87
- Netherlands      320.15
- Sweden           341.23
-  Switzerland     315.78
- Albania          277.52
- Lithuania        273.87
- Ireland          247.17
- Kazakhstan       262.61
- Estonia          238.86
+</code></pre></div></p>
+</li>
+<li>
+<p>La cantidad mínima de leche por año
+    <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</code></pre></div>
+    La salida es
+    <code>Milk consumption 2013 (kg/capita/yr)    284.85
+    Milk consumption 2007 (kg/capita/yr)    238.86
+    dtype: float64</code></p>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<p>La cantidad máxima de leche por país</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+Obtendrás:
+<div class="highlight"><pre><span></span><code>Finland          430.76
+Montenegro       349.21
+Netherlands      341.47
+Sweden           355.86
+Switzerland     318.69
+Albania          303.72
+Lithuania        295.46
+Ireland          291.86
+Kazakhstan       288.12
+Estonia          284.85
 dtype: float64
-`</p>
+</code></pre></div></p>
+</li>
+<li>
+<p>La cantidad mínima de leche por país</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+La salida es
+<div class="highlight"><pre><span></span><code>Finland          361.19
+Montenegro       305.87
+Netherlands      320.15
+Sweden           341.23
+Switzerland      315.78
+Albania          277.52
+Lithuania        273.87
+Ireland          247.17
+Kazakhstan       262.61
+Estonia          238.86
+dtype: float64
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Colocar el argumento axis=1 hará que la suma o cualquier función se aplique por filas.</p>
+</div>
 </details>
 </div>
 </div>

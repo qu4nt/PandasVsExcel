@@ -29,39 +29,51 @@
 }());
 </script>
 
-<div class="cell border-box-sizing code_cell rendered" markdown="1">
-<div class="input">
-
-```python
-Hello
-```
-
-</div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output" markdown="1">
-
-<div class="output_area" markdown="1">
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>
-<code>[&#39;Cristiano&#39;, 37, &#39;M&#39;]</code>
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+!!! Para los datos de la [FAO](https://www.fao.org) que puedes encontrar [aquí](). Realizar lo siguiente
 
+    1. Importar el archivo xls, debes saber que las columnas se deben establecer de la siguiente forma:
+        * Domain Code es de tipo cadena de caracteres str
+        * Element, Item Code, Item, Year code, Unit y Flag contienen valores categóricos. Son de tipo category. 
+        * Value tiene valores numéricos, es de tipo flotante.
+  
+            {
+                "Domain Code": str,
+                "Domain": "category",
+                "Element Code": "category",
+                "Element": "category",
+                "Item Code (FAO)": "category",
+                "Item": "category",
+                "Year Code": "category",
+                "Unit": "category",
+                "Value": float,
+                "Flag": "category",
+                "Flag Description": str,
+            }
+     ¿Es necesario utilizar `skiprow`?
+
+    2. Utiliza las funciones que te permitan ver las tres primeras y las tres últimas filas.
+    3. ¿Cuántas y cuáles son las columnas que tiene el archivo?
+    4. ¿Cuáles son los tipos de datos almacenados? ¿Qué devuelve las funciones dtypes y type?
+    5. ¿Hay valores nulos en los datos?
+    6. Consulta el índice y verifica que sea una lista ordenada de números.
+    7. Accede a la columna `Area` y utiliza una función para contar la cantidad de apariciones de cada valor.
+    8. Del ítem anterior, ¿cuántos países hay en los datos?
+    9. Convierte la columna Year a tipo datetime utilizando pd.to_datetime(df.Year, format="%Y")
+    10. Aplica un filtro para Year en el que obtengas la información de 2020, almacena esto en una variable y luego calcula el máximo. ¿A qué país corresponde el valor hallado?
+    11. Utiliza la función describe de pandas y comenta los resultados.
+    12. Aplica la función de agregación que permita calcular la suma de todos los índices de producción. 
+    13. Calcula el promedio del índice de producción para cada país.
+    14. Calcula en una misma tabla el promedio y la suma de los índices de producción por el Area Code (FAO)
+    15. Calcula el valor mínimo de los promedios calculados en el ítem 13 anterior y determina a qué país pertenece.
 </div>
 </div>
 </div>
 
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
 

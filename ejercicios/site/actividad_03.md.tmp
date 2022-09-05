@@ -39,7 +39,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Determina cuáles de las siguientes afirmaciones son verdaderas a cerca de las funciones en Excel y Python"
+!!! question "Determina cuál(es) de las siguientes afirmaciones es(son) verdadera(s) a cerca de las funciones en Excel y Python"
 
     a. Las funciones en Excel las descargamos de paquetes externos.
 
@@ -59,7 +59,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "¿Qué son las _keywords_ en Python?"
+!!! question "¿Qué son las _keywords_ en Python? Selecciona la opción correcta"
 
     a. Son claves que combinan las funcionalidades de bibliotecas.
 
@@ -98,7 +98,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "¿Cómo se importan las bibliotecas/módulos en Python?"
+!!! question "¿Cómo se importan las bibliotecas/módulos en Python? Selecciona la opción correcta"
 
     ```py
     a. import nombre_biblioteca
@@ -132,7 +132,7 @@
     - Verdadero
     - Falso
 
-??? success
+??? success "Respuesta"
      - [x] Falso.
     El módulo de Python permite manejar fechas y horas es `datetime`, que forma parte de la biblioteca estándar.
 </div>
@@ -148,7 +148,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "En una celda de código crea una variable que contenga tu fecha actual y luego crea otra con la fecha en la posición 3456 (`fromtimestamp`). Calcula la diferencia entre esas dos fechas."
+!!! question "En una celda de código crea una variable que contenga tu fecha actual. Luego crea otra variable con la fecha en la posición 3456 (`fromtimestamp`). Finalmente, calcula la diferencia entre esas dos fechas."
 
 ??? success "Respuesta"
 
@@ -188,7 +188,8 @@
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
 ??? success "Respuesta"
 
-    Falso. Las funciones de Excel se pueden replicar en Python, necesitamos conocer algunos módulos, bibliotecas o paquetes o simplemente crear nuestras propias funciones.
+    - [x] Falso.
+    Las funciones de Excel se pueden replicar en Python, necesitamos conocer algunos módulos, bibliotecas o paquetes o simplemente crear nuestras propias funciones.
 </div>
 </div>
 </div>
@@ -208,14 +209,15 @@
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
 ??? success "Respuesta"
-    `sqrt`: Devuelve la raíz cuadrada de x.
+
+    - [x]`sqrt`: Devuelve la raíz cuadrada de cualquier valor x.
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Supongamos que hemos ido a un supermercado y decidimos comprar los siguientes productos, almacena la siguiente información en"
+!!! question "La siguiente información corresponde a una factura, almacena los datos en"
 
     1. Dos listas
     1. Dos tuplas

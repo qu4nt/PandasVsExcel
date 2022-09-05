@@ -76,7 +76,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Almacena la siguiente información en una variable, con el nombre que desees. Una vez hecho lo anterior, accede a los elementos desde la segunda posición, luego guárdalos en una variable y conviértelo en un array"
+!!! question "Almacena la siguiente información en una variable que puede tener cualquier nombre. Una vez hecho esto, accede a los elementos desde la segunda posición. Luego guárdalos en una variable y conviértelos en un array."
 
     ```py
         [['name', 'age', 'sex'],
@@ -142,7 +142,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Utilizando la variable (de tipo `list`) y el _array_ que almacenaste en el apartado anterior crea un DataFrame de _pandas_."
+!!! question "Utilizando la variable (de tipo `list`) y el **_array_** que almacenaste en la parte anterior crea un DataFrame de _pandas_."
 </div>
 </div>
 </div>
@@ -187,16 +187,23 @@
 
     Puedes seleccionar la columna a partir de distintas formas
     
-    1. ```py
-        columna = df.age
+    1. 
+       ```py
+       columna = df.age
        ```
-    2. ```py
-        columna = df['age']
+    
+    2. 
+       ```py
+       columna = df['age']
        ```
-    3. ```py
+
+    3. 
+       ```py
        columna = df.loc[:,'age']
        ```
-    4. ```py
+    
+    4. 
+       ```py
        columna = df.iloc[:, 1]
        ```
    
@@ -216,7 +223,7 @@
 <div class="cell border-box-sizing text_cell rendered" markdown="1">
 <div class="inner_cell" markdown="1">
 <div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-!!! question "Para el siguiente DataFrame, que almacena 10 valores de la [lista de países ordenados por el consumo anual de leche per cápita, excluyendo la mantequilla](https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita), aplica las funciones suma, máximo y mínimo, de forma que obtengas:"
+!!! question "Para el siguiente DataFrame, que almacena 10 valores de la [lista de países ordenados por el consumo anual de leche per cápita](https://en.wikipedia.org/wiki/List_of_countries_by_milk_consumption_per_capita), aplica las funciones suma, máximo y mínimo, de forma que obtengas:"
 
     1. La cantidad total de leche por año.
     2. La cantidad total de leche consumida para cada país.
@@ -275,77 +282,86 @@
         ```
     1. La cantidad total de leche consumida para cada país.
     
-    ```py
-    df.sum(axis=1)
-    ```
+        ```py
+        df.sum(axis=1)
+        ```
+        La salida es:
+        ```
+        Finland          791.95
+        Montenegro       655.08
+        Netherlands      661.62
+        Sweden           697.09
+        Switzerland     634.47
+        Albania          581.24
+        Lithuania        569.33
+        Ireland          539.03
+        Kazakhstan       550.73
+        Estonia          523.71
+        dtype: float64
+        ```
     
-    ```
-      Finland          791.95
-      Montenegro       655.08
-      Netherlands      661.62
-      Sweden           697.09
-      Switzerland     634.47
-      Albania          581.24
-      Lithuania        569.33
-      Ireland          539.03
-      Kazakhstan       550.73
-      Estonia          523.71
-     dtype: float64
-    ```
-    1. La cantidad máxima de leche y la mínima por año
+    2. 
+        - La cantidad máxima de leche por año
     
-    ```py
-    df.max()
-    ```
-    ```
-    Milk consumption 2013 (kg/capita/yr)    430.76
-    Milk consumption 2007 (kg/capita/yr)    361.19
-    dtype: float64
-    ```
-   
-    ```py
-    df.min()
-    ```
-    ```
-    Milk consumption 2013 (kg/capita/yr)    284.85
-    Milk consumption 2007 (kg/capita/yr)    238.86
-    dtype: float64
-    ```
-    1. La cantidad máxima y mínima de leche por país
+            ```py
+            df.max()
+            ```
+            Obtendrás:
+            ```
+            Milk consumption 2013 (kg/capita/yr)    430.76
+            Milk consumption 2007 (kg/capita/yr)    361.19
+            dtype: float64
+            ```
+        - La cantidad mínima de leche por año
+            ```py
+            df.min()
+            ```
+            La salida es
+            ```
+            Milk consumption 2013 (kg/capita/yr)    284.85
+            Milk consumption 2007 (kg/capita/yr)    238.86
+            dtype: float64
+        ```
+    4. 
+        - La cantidad máxima de leche por país
     
-    ```py
-    df.max(axis=1)
-    ```
-    ```
-     Finland          430.76
-     Montenegro       349.21
-     Netherlands      341.47
-     Sweden           355.86
-     Switzerland     318.69
-     Albania          303.72
-     Lithuania        295.46
-     Ireland          291.86
-     Kazakhstan       288.12
-     Estonia          284.85
-    dtype: float64
-    ```
-    
-    ```py
-    df.min(axis=1)
-    ```
-    ```
-     Finland          361.19
-     Montenegro       305.87
-     Netherlands      320.15
-     Sweden           341.23
-     Switzerland      315.78
-     Albania          277.52
-     Lithuania        273.87
-     Ireland          247.17
-     Kazakhstan       262.61
-     Estonia          238.86
-    dtype: float64
-    ```
+            ```py
+            df.max(axis=1)
+            ```
+            Obtendrás:
+            ```
+            Finland          430.76
+            Montenegro       349.21
+            Netherlands      341.47
+            Sweden           355.86
+            Switzerland     318.69
+            Albania          303.72
+            Lithuania        295.46
+            Ireland          291.86
+            Kazakhstan       288.12
+            Estonia          284.85
+            dtype: float64
+            ```
+        - La cantidad mínima de leche por país
+
+            ```py
+            df.min(axis=1)
+            ```
+            La salida es
+            ```
+            Finland          361.19
+            Montenegro       305.87
+            Netherlands      320.15
+            Sweden           341.23
+            Switzerland      315.78
+            Albania          277.52
+            Lithuania        273.87
+            Ireland          247.17
+            Kazakhstan       262.61
+            Estonia          238.86
+            dtype: float64
+            ```
+    !!! tip "Colocar el argumento axis=1 hará que la suma o cualquier función se aplique por filas."
 </div>
 </div>
 </div>
